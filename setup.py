@@ -14,9 +14,9 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # http://packaging.python.org/en/latest/tutorial.html#version
-    version='1.0.0',
+    version='1.0.1',
 
-    description='Very easy incremental snapshot backups using rsync',
+    description='A dmenu wrapper script',
     long_description=long_description,
 
     # The project's main homepage.
@@ -35,7 +35,7 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
 
         # Pick your license as you wish (should match "license" above)
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
@@ -46,7 +46,7 @@ setup(
     ],
 
     # What does your project relate to?
-    keywords='',
+    keywords='dmenu',
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
