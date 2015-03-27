@@ -6,9 +6,9 @@ A [dmenu](http://tools.suckless.org/dmenu/) wrapper script that:
 1. Lets you define menu items as `key: value` pairs in a
    [YAML](http://yaml.org/) file, like:
 
-       Firefox: firefox
-       Terminal: gnome-terminal
-       Nautilus: nautilus --no-desktop --new-window
+        Firefox: firefox
+        Terminal: gnome-terminal
+        Nautilus: nautilus --no-desktop --new-window
 
    The keys are what will be shown in dmenu. The values are the commands that
    will be run when you select the keys from dmenu. Unlike the usual way of
