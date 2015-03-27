@@ -1,3 +1,10 @@
+[![Latest Version](https://pypip.in/version/itemizer/badge.svg)](https://pypi.python.org/pypi/itemizer/)
+[![Downloads](https://pypip.in/download/itemizer/badge.svg)](https://pypi.python.org/pypi/itemizer/)
+[![Supported Python versions](https://pypip.in/py_versions/itemizer/badge.svg)](https://pypi.python.org/pypi/itemizer/)
+[![Development Status](https://pypip.in/status/itemizer/badge.svg)](https://pypi.python.org/pypi/itemizer/)
+[![License](https://pypip.in/license/itemizer/badge.svg)](https://pypi.python.org/pypi/itemizer/)
+
+
 itemizer
 ========
 
