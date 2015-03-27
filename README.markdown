@@ -33,7 +33,7 @@ It accepts all the same command-line arguments as dmenu:
 
     itemizer_run -f -i -nb "#222222" -nf "#bbbbbb" -sb "#005577" -sf "#eeeeee" -fn "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*"
 
-To customize the menu copy the default itemizer.yaml file to `~/.itemizer.yaml`
+To customize the menu copy the [default itemizer.yaml file](itemizer/itemizer.yaml) to `~/.itemizer.yaml`
 and edit it.
 
 Itemizer is composed of two subcommands:
@@ -47,6 +47,6 @@ Itemizer is composed of two subcommands:
 
 Run `itemizer -h` for complete documentation of the options and subcommands.
 
-`itemizer_run` is a shell script that ties `itemizer list`, `dmenu`,
+[itemizer_run](bin/itemizer_run) is a shell script that ties `itemizer list`, `dmenu`,
 `itemizer show` and `sh` together, and that passes any command-line arguments
 that you pass it on to dmenu.
