@@ -28,6 +28,8 @@ A [dmenu](http://tools.suckless.org/dmenu/) wrapper script that:
 Installation
 ------------
 
+First install dmenu, then:
+
     pip install itemizer
 
 
