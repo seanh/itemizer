@@ -6,7 +6,7 @@ import os
 import sys
 
 
-def read_items(items_file):
+def read_items_file(items_file):
     """Return the items from the items file as a dict."""
 
     def _items(items_file):
@@ -32,15 +32,29 @@ def read_items(items_file):
             raise
 
 
-def list_keys(items_file):
-    """Return a newline-separated list of the keys from the ``items`` dict."""
-    items = read_items(items_file)
+def read_items_files(items_files):
+    """Return the items from the items files as a dict.
+
+    If two items files both contain items with the same key, the item from the
+    file later in the list will overwrite the earlier one.
+
+    """
+    items_files = items_files or []
+    items = {}
+    for items_file in items_files:
+        items.update(read_items_file(items_file))
+    return items
+
+
+def list_keys(items_files):
+    """Return a newline-separated list of the keys from ``items_files``."""
+    items = read_items_files(items_files)
     return "\n".join(key for key in items.keys())
 
 
-def show_value(items_file, key):
-    """Return the value for the given ``key`` from ``items``."""
-    return read_items(items_file).get(key, key)
+def show_value(items_files, key):
+    """Return the value for the given ``key`` from the ``items_files``."""
+    return read_items_files(items_files).get(key, key)
 
 
 def main():
@@ -48,14 +62,10 @@ def main():
     parser = argparse.ArgumentParser()
 
     def list_keys_(args):
-        return list_keys(args.items_file)
+        return list_keys(args.items_files)
 
     def show_value_(args):
-        return show_value(args.items_file, sys.stdin.read().strip())
-
-    parser.add_argument(
-        "-i", "--items-file", default=None,
-        help="the YAML file containing the menu items")
+        return show_value(args.items_files, sys.stdin.read().strip())
 
     subparsers = parser.add_subparsers()
 
@@ -67,6 +77,12 @@ def main():
         "show",
         help="read a key from stdin and print its value from the items file")
     show_parser.set_defaults(func=show_value_)
+
+    for sub_parser in (list_parser, show_parser):
+        sub_parser.add_argument(
+            "-i", "--items-files", default=None, nargs='*',
+            help="a space-separated list of the YAML files containing the "
+                 "menu items")
 
     args = parser.parse_args()
     print args.func(args)
