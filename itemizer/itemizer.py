@@ -29,7 +29,8 @@ def read_items_file(items_file):
             items_file = os.path.join(here, "itemizer.yaml")
             return _items(items_file)
         else:
-            raise
+            # Don't crash if a user-specified items file doesn't exist.
+            return {}
 
 
 def read_items_files(items_files):
